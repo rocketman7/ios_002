@@ -91,7 +91,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mtu-SU-6Wj" kind="showDetail" identifier="detail" id="QTD-4m-CKV"/>
+                                    <segue destination="mtu-SU-6Wj" kind="show" identifier="detail" id="fng-Sn-X8s"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1583.2" y="-576.1619190404798"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--diary content-->
         <scene sceneID="EJr-2U-VbW">
             <objects>
-                <viewController id="mtu-SU-6Wj" customClass="DetailViewController" customModule="diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="diary content" id="mtu-SU-6Wj" customClass="DetailViewController" customModule="diary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U1C-6a-JGR"/>
                         <viewControllerLayoutGuide type="bottom" id="yUd-fO-x2L"/>
@@ -124,22 +124,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1os-ou-LXD">
-                                <rect key="frame" x="16" y="28" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1os-ou-LXD">
+                                <rect key="frame" x="16" y="90" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ygg-XL-SiY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT8-sr-epQ">
-                                <rect key="frame" x="16" y="65" width="343" height="189"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT8-sr-epQ">
+                                <rect key="frame" x="16" y="127" width="343" height="189"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whP-AU-NbO">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62442129625131571" blue="0.47922086202934833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="0.038865571356184847" green="0.25917293213555115" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="mtu-SU-6Wj" eventType="touchUpInside" id="rXW-8G-b62"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1os-ou-LXD" firstAttribute="top" secondItem="U1C-6a-JGR" secondAttribute="bottom" constant="26" id="6gL-e1-SOM"/>
+                            <constraint firstItem="DT8-sr-epQ" firstAttribute="top" secondItem="1os-ou-LXD" secondAttribute="bottom" constant="16" id="7h9-cy-2xW"/>
+                            <constraint firstAttribute="bottom" secondItem="whP-AU-NbO" secondAttribute="bottom" constant="20" symbolic="YES" id="EyQ-cG-adh"/>
+                            <constraint firstItem="1os-ou-LXD" firstAttribute="trailing" secondItem="PcF-w5-YL4" secondAttribute="trailingMargin" id="XS1-dY-Sy5"/>
+                            <constraint firstItem="1os-ou-LXD" firstAttribute="leading" secondItem="DT8-sr-epQ" secondAttribute="leading" id="ZOV-fF-9Bm"/>
+                            <constraint firstItem="whP-AU-NbO" firstAttribute="leading" secondItem="DT8-sr-epQ" secondAttribute="leading" id="aMb-xh-9pn"/>
+                            <constraint firstItem="yUd-fO-x2L" firstAttribute="top" secondItem="DT8-sr-epQ" secondAttribute="bottom" constant="351" id="csL-NG-fc7"/>
+                            <constraint firstItem="1os-ou-LXD" firstAttribute="trailing" secondItem="DT8-sr-epQ" secondAttribute="trailing" id="e36-jJ-EGA"/>
+                            <constraint firstItem="1os-ou-LXD" firstAttribute="leading" secondItem="PcF-w5-YL4" secondAttribute="leadingMargin" id="kFa-kP-oo7"/>
+                            <constraint firstItem="whP-AU-NbO" firstAttribute="trailing" secondItem="DT8-sr-epQ" secondAttribute="trailing" id="oAe-xY-i2z"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="contentLabel" destination="DT8-sr-epQ" id="gsw-oB-ArP"/>

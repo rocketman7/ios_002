@@ -116,6 +116,10 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
             break
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         default:
             break
         }
@@ -169,8 +173,10 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
 //            detailViewController.titleText = contentList[indexPath!]["title"]
 //            detailViewController.contentText = contentList[indexPath!]["content"]
             let article = controller.object(at: tableView.indexPathForSelectedRow!)
-            detailViewController.titleText = article.title
-            detailViewController.contentText = article.content
+//            detailViewController.titleText = article.title
+//            detailViewController.contentText = article.content
+            detailViewController.article = article
+            
         }
     }
     
